@@ -1,0 +1,307 @@
+*{
+    position: relative;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    background-color: #e1e1e1;
+    
+    
+}
+
+a{
+    text-decoration: none;
+    color: #00408B;
+}
+.u-cf::after{
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+/* 字體設定 */
+.title{
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 24px;
+}
+.sub{
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+}
+.par{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+}
+.status{
+
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 24px;
+      
+}
+  
+
+
+
+/* navbar */
+.wrapper{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+   
+}
+.navbar{
+    background-color: #4A90E2;
+    
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+.menu li{
+    display: inline-block;
+    margin-right: 30px;
+    
+}
+.menu a{
+    text-align: center;
+    display: block;
+    padding: 10px;
+    
+    
+}
+
+.menu a::after{
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 2px;
+    background-color: #ffffff;
+    bottom: 3px;
+    bottom: 0;
+    left: 50%;
+    transform: translatex(-50%);
+    transition: all 0.3s;
+}
+.menu li:hover a::after{
+    width: 100px;
+}
+.menu li .current::after{
+    width: 100px;
+} 
+.menu li .current{
+    color: #ffffff;
+}
+
+/* add task */
+
+.main{
+    width: 30%;
+    height: 200px;
+    margin-top: 5%;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translatex(-50%);
+    
+    
+}
+
+.addlist{
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    /* display: block; */
+}
+.addlistinput{
+    border-radius: 5px;
+    border: 2px solid #c8c8c8;
+    padding: 14px;
+    width: 100%;
+    
+}
+.addlist ::placeholder{
+    color: #c8c8c8;
+    margin: 20px;
+}
+
+.addupload{
+    margin-top: 20px;
+    background-color: #F2F2F2;
+    
+    width: 100%;
+}
+
+.addtitle{
+    display: inline-flex;
+    padding: 10px;
+    vertical-align:middle;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.addtitletext{
+    margin-left: 30px;
+    resize:none;
+    border-radius: 2px;
+    border: 0px ;
+    background-color: #F2F2F2;
+}
+.addtitle button{
+    background-color: #F2F2F2;
+    border: 0px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+.addcontent{
+    background-color: #F2F2F2;
+    padding: 0px 40px;
+    border-top: 2px solid #c8c8c8;
+    
+}
+.deadline,.file,.comment{
+    padding-top: 20px;
+}
+
+.deadline i,.file .sub i,.comment i{
+    margin-right: 10px;
+}
+.deadlineinput{
+    width: 100%;
+    margin-left: 30px;
+    margin-top: 5px;
+    display: flex;
+    
+}
+.deadlineinput input{
+    border-radius: 5px;
+    border: 1px solid #c8c8c8;
+    padding: 5px;
+    margin-right: 5px;
+}
+.file label{
+    background-color: #C8C8C8;
+    margin-left: 30px;
+    border-radius: 2px;
+    font-size: 20px;
+    padding-left: 5px;
+    
+}
+.file label:hover{
+    background-color: #4A90E2;
+}
+
+.file label i{
+    color: #ffffff;
+    /* margin: 10px;
+    padding: 20px; */
+}
+.file input{
+    opacity: 0;
+}
+
+.comment textarea{
+    margin-left: 30px;
+    resize:none;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #c8c8c8;
+    margin-bottom: 15px;
+}
+.focusbutton {
+    background-color: #fff;
+    display: flex;
+}
+.focusbutton button{
+    width: 50%;
+    padding: 20px;
+    cursor: pointer;
+    
+}
+.cancel{
+    color: #D0021B;
+    background-color: #FFFFFF;
+    border: 0px;
+}
+.cancel:hover{
+    background-color: #FDFDFD;
+}
+.addtask{
+    color: #ffffff;
+    background-color: #4A90E2;
+    border: 0px;
+}
+.addtask:hover{
+    background-color: #3982D7;
+}
+
+
+  
+input[id="cb"] + label,input[id="addcb"] + label {
+    /* display: inline-block; */
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    background-color: #fff;
+    display: flex;
+    align-items: center;    
+    margin-left: 20px;
+}
+input[id="cb"]:checked + label:after,input[id="addcb"]:checked + label:after {
+    
+    content: '\2714';
+    color: #ffffff;
+    margin: auto;
+}
+input[id="cb"]:checked + label,input[id="addcb"]:checked + label {
+   
+    background-color: #4A90E2;
+    border: 0px;
+   
+}
+input[id="cb"] , input[id="addcb"] {
+    display: none;
+}
+.list{
+    margin-top: 20px;
+    display: inline-flex;
+    background-color: #FFF2DC;
+    width: 100%;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.listtitle{
+    display: inline-block;
+
+}
+.listicon button{
+    background-color: #FFF2DC;
+    border: 0px;
+    cursor: pointer;
+}
+.listtitle i{
+    color: #757575;
+}
+#fillstar{
+    color: #F5A623;
+}
