@@ -35,4 +35,5 @@ const sa = arr.filter(item => item.scorea >= 60 && item.scoreb >= 60);
 // console.log(sa[0].name);
 const sa2 = arr.filter(item => item.isgood)
 
-console.log(sa2)
+// console.log(sa2)
+
