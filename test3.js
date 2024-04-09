@@ -37,3 +37,4 @@ const sa2 = arr.filter(item => item.isgood)
 
 // console.log(sa2)
 
+11
