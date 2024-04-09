@@ -6,11 +6,16 @@ class student {
         this.name = name;
         this.scorea = scorea;
         this.scoreb = scoreb;
-        this.isgood = scorea >= 60 && scoreb >= 60
+        // this.isgood = scorea >= 60 && scoreb >= 60
     }
-    sco() {
-        const score2 = sa.filter(item => item.scorea >= 60 && item.scoreb >= 60);
 
+    isgood() {
+        if (this.scorea >= 60) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
     // get isgood() {
     //     return this.scorea >= 60 && this.scoreb >= 60
@@ -31,10 +36,17 @@ let studentc = new student("789", 60, 70);
 
 let arr = [studenta, studentb, studentc];
 
-const sa = arr.filter(item => item.scorea >= 60 && item.scoreb >= 60);
-// console.log(sa[0].name);
-const sa2 = arr.filter(item => item.isgood)
+// const sa = arr.filter(item => item.scorea >= 60 && item.scoreb >= 60);
+// // console.log(sa[0].name);
+// const sa2 = arr.filter(item => item.isgood)
 
 // console.log(sa2)
 
-11
+
+
+const s = arr.filter(item => item.isgood())
+// console.log(s);
+
+
+
+

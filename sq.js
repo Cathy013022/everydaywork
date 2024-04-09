@@ -2,88 +2,27 @@ angular.module('todoApp', [])
     .controller('TodoListController', function () {
         var todoList = this;
 
-
-        todoList.todos = [
-            new Todo('123', true),
-            new Todo('456', true),
-            new Todo('789', true),
-            new Todo('xxx', true)
-        ];
-
-        todoList.todos2 = new TodoList([
-            new Todo('123', true),
-            new Todo('456', true),
-            new Todo('789', true),
-            new Todo('xxx', true)
-        ])
-
-        console.log(todoList.todos)
-        console.log(todoList.todos2)
-        console.log(todoList.todos2.remaining())
-        console.log(todoList.todos2.xxx)
-
-        todoList.remaining = function () {
-            let count = 0;
-            todoList.todos.forEach(item => {
-
-                count += item.done ? 0 : 1;
-
-            })
-            return count;
+        let arr = []
+        for (let i = 1; i < 31; i++) {
+            const student = new Student(`S-${i}`, i * 2, i * 3)
+            arr.push(student);
         }
 
+        todoList.students = arr;
 
-        todoList.addTodo = function () {
-            todoList.todos.push(new Todo(todoList.todoText));
+        console.log(todoList)
 
-            todoList.todoText = "";
-        };
+    });
 
-        todoList.archive = function () {
-            let old = todoList.todos;
-            todoList.todos = [];
-            // if (old.todos.done == false) {
-            //     todoList.todos.push(this.todos);
-            // }
-            // else {
-            //     todoList.todos = [];
-            // }
-        }
 
+class Student {
+    name;
+    scorea;
+    scoreb;
+    constructor(name, scorea, scoreb) {
+        this.name = name;
+        this.scorea = scorea;
+        this.scoreb = scoreb;
+        this.isGood = scorea >= 60 && scoreb >= 60
     }
-
-    );
-
-class Todo {
-    text;
-    done;
-
-    constructor(text, done) {
-        this.text = text;
-        this.done = !!done;
-    }
-
 }
-
-class TodoList {
-    constructor(raw) {
-        this.raw = raw.map(item => new Todo(item))
-    }
-
-    remaining() {
-        // let count = 0;
-        // this.raw.forEach(item => {
-
-        //     count += item.done ? 0 : 1;
-
-        // })
-        return this.raw.filter(item => !item.done).length
-        // return count;
-    }
-
-    get xxx() {
-        return this.raw.filter(item => !item.done).length
-    }
-
-}
-

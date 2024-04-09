@@ -24,6 +24,23 @@
             <input type="text" ng-model="todoList.todoText" size="30" placeholder="add new todo here">
             <input class="btn-primary" type="submit" value="add">
         </form>
+        <table>
+            <tr>
+                <td>name</td>
+                <td>scorea</td>
+                <td> scoreb</td>
+                <td>isGood</td>
+            </tr>
+            <tr ng-repeat="student in todoList.students">
+                <td>{{student.name}}</td>
+                <td>{{student.scorea}}</td>
+                <td ng-bind="student.scoreb"></td>
+                <td>
+                    <span ng-if="student.isGood">O</span>
+                    <span ng-if="!student.isGood">X</span>
+                </td>
+            </tr>
+        </table>
     </div>
 
 
